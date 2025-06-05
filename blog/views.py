@@ -12,7 +12,7 @@ from django.views.generic import ListView, DetailView, CreateView
 class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
-    template_name = 'djangoBlog/create_post.html'
+    template_name = 'blog/create_post.html'
     success_url = reverse_lazy('post-list')
 
 
@@ -22,7 +22,7 @@ class PostsListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'djangoBlog/post_detail.html'
+    template_name = 'blog/post_detail.html'
     http_method_names = ['get', 'post']
 
     def get_context_data(self, **kwargs):
