@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    datetime = models.DateTimeField(u'Publishing Date', default=timezone.now)
+    created_at = models.DateTimeField(u'Publishing Date', default=timezone.now)
     content = models.TextField(max_length=10000)
 
     def __unicode__(self):
