@@ -16,3 +16,8 @@ class PostDetailAPIView(generics.RetrieveAPIView):
 
 class CommentCreateAPIView(generics.CreateAPIView):
     serializer_class = CommentSerializer
+
+    def perform_create(self, serializer):
+        post_id = self.kwargs.get('post_id')
+        post = Post.objects.get(pk=post_id)
+        serializer.save(post=post)
